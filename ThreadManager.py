@@ -11,7 +11,7 @@ def init():
 
 
 def stop():
-    if len(logThread.messageQuene) == 0:
+    if len(logThread.messageList) == 0:
         logThread.runState = False
     else:
         time.sleep(3)
