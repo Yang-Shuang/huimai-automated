@@ -1,1 +1,1 @@
-from .Log import l;
+from .Log import w
