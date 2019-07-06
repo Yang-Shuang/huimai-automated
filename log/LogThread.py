@@ -1,6 +1,8 @@
 import base.BaseThread as BaseThread
 import time
-logPath = 'log/file/'
+import utils
+print()
+logPath = utils.project_path('/log/file/')
 
 
 class LogThread (BaseThread.BaseThread):
@@ -21,7 +23,7 @@ class LogThread (BaseThread.BaseThread):
     def run(self):
         print('-----log thread start-----')
         global logPath
-        logPath = logPath + time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime()) + '.txt'
+        logPath = logPath + time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime()) + '.txt'
         while self.runState:
             if len(self.messageList) > 0:
                 msg = self.messageList[0]
